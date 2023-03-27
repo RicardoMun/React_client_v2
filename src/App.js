@@ -1,17 +1,27 @@
 import "./App.scss";
 import React from "react";
-import { AdminHome } from "./pages/admin/AdminHome";
-import { Contact } from "./pages/Contact";
-import { Home } from "./pages/Home";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AllRoutes from "./config/routes";
+
 
 function App() {
   return (
-    <div className="styles">
-      <React.Fragment></React.Fragment>
-      <AdminHome></AdminHome>
-      <Contact></Contact>
-      <Home></Home>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {AllRoutes.map((index, route) => {
+          <Route 
+            Key={index}
+            path={route.path}
+            element={
+              <route.layout>
+                <route.component>
+                </route.component>
+              </route.layout>}>
+          </Route>
+        })}
+      </Routes>
+    </BrowserRouter>
   );
 }
 

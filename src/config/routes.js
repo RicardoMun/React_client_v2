@@ -1,11 +1,11 @@
 import { GeneralLayout } from "../Layout/GeneralLayout";
 
-import { SignIn } from "../Pages/admin/SignIn";
-import { AdminHome } from "../Pages/admin/AdminHome";
+import { SignIn } from "../pages/admin/Sign-In";
+import { AdminHome } from "../pages/admin/AdminHome";
 
-import { Contact } from "../Pages/Contact";
-import { Home } from "../Pages/Home";
-import { NotFound } from "../Pages/NotFound";
+import { Contact } from "../pages/Contact";
+import { Home } from "../pages/Home";
+import { NotFound } from "../pages/NotFound";
 
 const AdminRoutes = [
     { path: "/admin", component: AdminHome, layout: GeneralLayout },
