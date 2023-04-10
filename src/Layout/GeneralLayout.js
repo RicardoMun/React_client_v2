@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Layout, Button } from "antd";
 import { MenuSider } from "../components/MenuComponents/MenuSider/MenuSider";
 import { MenuTop } from "../components/MenuComponents/MenuTop/MenuTop";
+import { FooterPage } from "../components/Footer/Footer";
 import {GithubOutlined} from '@ant-design/icons';
 import "./GeneralLayout.scss";
 
@@ -26,16 +27,12 @@ export const GeneralLayout = (props) => {
         />
       </Header>
       
-      <Content>{children}</Content>
+      <Content className="general-layout-content">{children}</Content>
       
-      <Footer>
-        <Button type="link" onClick={() => console.log("GitHub")}>
-          <GithubOutlined style={{ fontSize: "17px" }}/>
-        </Button>
+      <Footer className="general-layout-footer">
+        <FooterPage></FooterPage>
       </Footer>
-
       </Layout>
-      {children}
     </Layout>
   );
 };
