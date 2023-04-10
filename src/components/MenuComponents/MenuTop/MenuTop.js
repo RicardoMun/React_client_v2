@@ -7,25 +7,20 @@ import './MenuTop.scss';
 export const MenuTop = ( props ) => {
 
   const { menuCollapsed, setMenuCollapsed } = props;
-  
-  const userLogout = () => console.log('Cerraste sesión');
 
   return (
-
     <div className='menu-top'>
       <div className='menu-top__left'>
-        <img src={Logo} className='menu-top__left__logo'></img>
-        <Button type='link' onClick={() => setMenuCollapsed(!menuCollapsed)}>
+        <Button 
+          type='link'
+          onClick={() => setMenuCollapsed(!menuCollapsed)}
+          aria-label={menuCollapsed ? 'Abrir menu' : 'Cerrar menu'}
+        >
           {menuCollapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </Button>
+        <img src={Logo} className='menu-top__left__logo'></img>
       </div>
 
-      
-      <div className='menu-top__right'>
-        <Button type='link' onClick={userLogout}>
-          <UserOutlined/>
-        </Button>
-      </div>
     </div>
     
     
