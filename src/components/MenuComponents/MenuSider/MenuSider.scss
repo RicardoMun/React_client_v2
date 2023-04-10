@@ -2,8 +2,25 @@
 
 .menu-sider{
     position: absolute;
-    left: 0;
-    margin-top: 75px;
-    height: 100vh;
-    background-color: rgb(117, 158, 223);
+    top: 37px;
+    height: 100hv;
+    transition: all 0.3s ease-in-out;
+    border-right: 10px !important;
+    background-color: rgb(122, 129, 167);
+
+    &.menu-sider-collapsed{
+        width: 80px;
+    }
+
+    .ant-menu-item-selected{
+        background-color: rgba(37, 37, 78, 0.4);
+        color: white;
+    }
+
+    .ant-menu-item{
+        display: flex;
+        margin: 8px !important;
+        border-radius: 0 14px 14px 0 !important;
+        padding: 10px !important;
+    }
 }

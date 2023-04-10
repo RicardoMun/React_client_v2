@@ -38,8 +38,24 @@ export const MenuSider = ( props ) => {
     navigate(path);
   };
 
+  const itemRender = (items, index) => {
+    const {icon, label} = items;
+    const isSelected = location.pathname === items.key;
+    return (
+      <Menu.Item
+        key={items.key}
+        icon={icon}
+        className={
+          isSelected ? "ant-menu-item ant-menu-item-selected" : "ant-menu-item"
+        }
+      >
+        {label}
+      </Menu.Item>
+    );
+  };
+
   return (
-    <Sider collapsed={props.menuCollapsed}>
+    <Sider className="menu-sider" collapsed={props.menuCollapsed}>
       <Menu 
         className="menu-sider"
         theme="light"
@@ -47,7 +63,9 @@ export const MenuSider = ( props ) => {
         defaultSelectedKeys={[location.pathname]}
         items={menuItems}
         onClick={navigateTo}
-      />
+      >
+        {menuItems.map((items) => itemRender(items))}
+      </Menu>
     </Sider>
   );
 };
