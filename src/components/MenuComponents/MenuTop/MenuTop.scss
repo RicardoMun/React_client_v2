@@ -2,8 +2,32 @@
 
 .menu-top{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    height: 95px;
+    width: 100hv;
+    transition: all 0.3s ease-in-out;
+
+    &.menu-top-collapsed{
+        padding: 0;
+    }
+
+    &__left{
+        display: flex;
+        align-items: center;
+        height: 50px;
+
+        &__logo{
+            cursor: pointer;
+        }
+    }
+
     button{
         color: $primary-color;
+        margin-left: 0;
+        width: 60px;
+        font-size: 20px;
         &:hover{
             color: $secondary-color;
         }
